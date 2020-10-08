@@ -18,6 +18,8 @@ Prior working knowledge of SQL Server Data Tools (SSDT) projects for Analysis Se
 
 ## Deployment
 
+<b>Step 1:</b> Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the <b>ReleasePipelineDataSourceUpdate.cs</b> is also present in the repository.
+
 ## References
 * <a href="https://github.com/otykier/TabularEditor">Tabular Editor</a>
 * <a href="https://github.com/otykier/TabularEditor/wiki/Command-line-Options">Tabular Editor Command line Options</a>
