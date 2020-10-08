@@ -12,6 +12,14 @@ Prior working knowledge of SQL Server Data Tools (SSDT) projects for Analysis Se
 * Add SPN as an Analysis Services Administrator using SQL Server Management Studio (SSMS), see <a href="https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-addservprinc-admins#using-sql-server-management-studio" target="_blank">here</a>.
   * Use <b>Manual Entry</b> with the following format, ```app:<ApplicationID>@<TenantID>```
   
+# Repository Items
+
+# Deployment
+
+# References
+<a href="https://github.com/otykier/TabularEditor">Tabular Editor</a>
+<a href="https://github.com/otykier/TabularEditor/wiki/Command-line-Options">Tabular Editor Command line Options</a>
+<a href="https://tabulareditor.com/2019/10/08/DevOps3.html">You're Deploying it Wrong! - AS Edition</a>  
 
   
 
