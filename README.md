@@ -21,7 +21,12 @@ Prior working knowledge of SQL Server Data Tools (SSDT) projects for Analysis Se
 <b>Step 1:</b>
 Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the <b>ReleasePipelineDataSourceUpdate.cs</b> is also present in the repository.
 
+<b>Step 2:</b>
+Create a new build pipeline.
+
 ![Create new build pipeline](https://github.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/blob/main/img/CreateNewBuildPipeline.png?raw=true)
+
+Choose 
 
 ## References
 * <a href="https://github.com/otykier/TabularEditor">Tabular Editor</a>
