@@ -28,9 +28,8 @@ Commit and Push the Tabular model project to the Git repository of your Azure De
 Create a new build pipeline. Use the tasks from the steps section of the BuildPipeline.yml file. You should not have to modify either of the steps. The two steps copy the project files in the repository to a staging area on the build agent, and then publishes the project files as an artifact.  This positions the project files, including the Bim file for consumption in the later release pipeline.  It also ensures that the Bim file is always present for the release pipeline.
 
 <b>Step 3: Create release pipeline</b>
-Create a new release pipeline, adding the artifact from the build pipeline created in Step 2.
-
-Add a Stage to the pipeline containing two steps:
+Create a new release pipeline, adding the artifact from the build pipeline created in Step 2. Add a Stage to the pipeline and follow the steps below to add tasks.
+<br/>
 <b>1)</b> PowerShell task with the following inline command to download and install Tabular Editor on the release agent.
 ```
 # Download URL for Tabular Editor portable:
@@ -62,7 +61,8 @@ start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArti
 <br/>
 <br/>
 <br/>
-Your final pipeline stage should resemble the image below.
+Your final pipeline stage should resemble the image below:
+
 ![Release pipline](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipeline.jpg)
 
 ![Release pipline agent tasks](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipelineStage.jpg)
