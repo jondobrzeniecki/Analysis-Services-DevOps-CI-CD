@@ -57,7 +57,7 @@ Invoke-WebRequest -Uri $TabularEditorUrl -OutFile $DownloadDestination
 Expand-Archive -Path $DownloadDestination -DestinationPath (get-location).Path
 Remove-Item $DownloadDestination
 ```
-<b>2)</b> Add a pipeline variable named ASConnectionString for the connection string to connect to the Azure Analysis Services server.  Using the following format for the connection string and lock the variable to hide the value since a set of SPN credentials are contained in it.
+<b>2)</b> Add a pipeline variable named ASConnectionString for the connection string to connect to the Azure Analysis Services server.  Using the following format for the connection string. Lock the variable to hide the value since a set of SPN credentials are contained in it.
 
 `Provider=MSOLAP;Data Source=<aas-server>;User ID=app:<ApplicationID>@<TenantID>;Password=<Secret>`
  
