@@ -2,7 +2,10 @@
 
 This repository is an up-to-date summarized example of creating a build and release pipeline (CI/CD) for Analysis Services Tabular models. The approach is centered around the .bim file and the use of <a href="https://github.com/otykier/TabularEditor">Tabular Editor</a> from the command line.  The example has a few specific steps for Azure Analysis Services, but the same approach can be used for a self-installed SQL Server hosting Analysis Services.
 
-Prior working knowledge of SQL Server Data Tools (SSDT) projects for Analysis Services Tabular models is assumed.
+Prior working knowledge is assumed for:
+* SQL Server Data Tools (SSDT) projects for Analysis Services Tabular models
+* Using Git repositories
+* Creating build and release pipelines in Azure DevOps.
 
 ## Prerequisites
 * A running instance of <a href="https://azure.microsoft.com/en-us/services/analysis-services/">Azure Analysis Services</a>.
