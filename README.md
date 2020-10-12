@@ -29,7 +29,7 @@ Prior working knowledge is assumed for:
 
 ## Deployment
 
-###<b>Step 1: Commit and Push to Source Control</b>
+### <b>Step 1: Commit and Push to Source Control</b>
 <br/>
 Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the ReleasePipelineDataSourceUpdate.cs script is also present in the repository.
 
