@@ -70,6 +70,8 @@ Remove-Item $DownloadDestination
 ```
 start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\<your-project-name>\<your-bim-file>.bim" -D "$(ASConnectionString)" "$(ASModelName)" -S "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\ReleasePipelineDataSourceUpdate.cs" -C -O -P -V -E -W
 ```
+<i>Note: Please reference the <a href="https://github.com/otykier/TabularEditor/wiki/Command-line-Options">Tabular Editor Command line Options</a> for a better understanding of the options present in the sample command.</i>
+
 <br/>
 <br/>
 Your final pipeline should resemble the images below:
