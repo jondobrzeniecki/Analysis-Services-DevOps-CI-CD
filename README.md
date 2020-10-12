@@ -42,7 +42,7 @@ Create a new build pipeline. Use the tasks from the steps section of the <b>Buil
 Create a new release pipeline, adding the artifact from the build pipeline created in Step 2. Add a Stage to the pipeline and follow the steps below to add tasks.
 <br/>
 <br/>
-<b>1)</b> PowerShell task with the following inline command to download and install Tabular Editor on the release agent.
+<b>1)</b> Add a PowerShell task with the following inline command to download and install Tabular Editor on the release agent.
 ```
 # Download URL for Tabular Editor portable:
 $TabularEditorUrl = "https://github.com/otykier/TabularEditor/releases/download/2.9.2/TabularEditor.Portable.zip" 
