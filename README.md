@@ -29,13 +29,13 @@ Prior working knowledge is assumed for:
 
 ## Deployment
 
-### <b>Step 1: Commit and Push to Source Control</b>
+<b>Step 1: Commit and Push to Source Control</b>
 <br/>
-Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the ReleasePipelineDataSourceUpdate.cs script is also present in the repository.
+Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the <b>ReleasePipelineDataSourceUpdate.cs</b> script is also present in the repository.
 
 <b>Step 2: Create build artifact containing Bim file</b>
 <br/>
-Create a new build pipeline. Use the tasks from the steps section of the BuildPipeline.yml file. You should not have to modify either of the steps. The two steps copy the project files in the repository to a staging area on the build agent, and then publishes the project files as an artifact.  This positions the project files, including the Bim file, for consumption in the later release pipeline.  It also ensures that the Bim file is always present for the release pipeline.
+Create a new build pipeline. Use the tasks from the steps section of the <b>BuildPipeline.yml</b> file. You should not have to modify either of the steps. The two steps copy the project files in the repository to a staging area on the build agent, and then publishes the project files as an artifact.  This positions the project files, including the Bim file, for consumption in the later release pipeline.  It also ensures that the Bim file is always present for the release pipeline.
 
 <b>Step 3: Create release pipeline</b>
 <br/>
