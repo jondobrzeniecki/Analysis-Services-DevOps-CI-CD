@@ -81,7 +81,7 @@ Your final pipeline should resemble the images below:
 ![Release pipline agent tasks](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipelineStage.jpg)
 
 ## Limitations
-* This is a basic example that does not include other DevOps best practices for (i.e. Unit testing, Quality control checks).
+* This is a basic example that does not include other DevOps best practices (i.e. Unit testing, Quality control checks).
 * The build pipeline copies all project files when only the Bim files is required. This was intentional for making the settings of the Copy Files task generic to increase reusability.
 
 ## References
