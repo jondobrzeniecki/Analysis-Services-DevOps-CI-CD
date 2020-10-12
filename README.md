@@ -21,15 +21,47 @@ Prior working knowledge is assumed for:
 
 ## Deployment
 
-<b>Step 1:</b>
+<b>Step 1: Commit and Push to Source Control</b>
 Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the <b>ReleasePipelineDataSourceUpdate.cs</b> is also present in the repository.
 
-<b>Step 2:</b>
-Create a new build pipeline.
+<b>Step 2: Create build artifact containing Bim file</b>
+Create a new build pipeline. Use the tasks from the steps section of the BuildPipeline.yml file. You should not have to modify either of the steps.
 
-![Create new build pipeline](https://github.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/blob/main/img/CreateNewBuildPipeline.png?raw=true)
+<b>Step 3: Create release pipeline</b>
+Create a new release pipeline, adding the artifact from the build pipeline created in Step 2.
 
-Choose 
+Add a Stage to the pipeline containing two steps:
+1) PowerShell task with the following inline command to download and install Tabular Editor on the release agent.
+```
+# Download URL for Tabular Editor portable:
+$TabularEditorUrl = "https://github.com/otykier/TabularEditor/releases/download/2.9.2/TabularEditor.Portable.zip" 
+
+# Download destination (root of PowerShell script execution path):
+$DownloadDestination = join-path (get-location) "TabularEditor.zip"
+
+# Download from GitHub:
+Invoke-WebRequest -Uri $TabularEditorUrl -OutFile $DownloadDestination
+
+# Unzip Tabular Editor portable, and then delete the zip file:
+Expand-Archive -Path $DownloadDestination -DestinationPath (get-location).Path
+Remove-Item $DownloadDestination
+```
+2) Add a pipeline variable named ASConnectionString for the connection string to connect to the Azure Analysis Services server.  Using the following format for the connection string and lock the variable to hide the value since a set of SPN credentials are contained in it.
+
+`Provider=MSOLAP;Data Source=<aas-server>;User ID=<app:cliend-id@tenant-id>;Password=<secret>`
+ 
+3) Add a variable named ASModelName for the name of your tabular model.
+
+4) Add variables for each data source in the model. The name of the variable should be the exact name of the data source in the tabular model.  The value will be the server name of the data source in the higher environment (i.e. Test, QA, Prod).
+
+5) Add a command line task to the release agent after the PowerShell task. Use the script below to execute a deployment with Tabular Editor.
+
+`start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\<your-project-name>\<your-bim-file>.bim" -D "$(ASConnectionString)" "$(ASModelName)" -S "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\ReleasePipelineDataSourceUpdate.cs" -C -O -P -V -E -W
+
+Your final pipeline stage should resemble the image below.
+
+
+
 
 ## References
 * <a href="https://github.com/otykier/TabularEditor">Tabular Editor</a>
