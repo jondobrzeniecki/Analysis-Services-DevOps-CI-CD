@@ -7,6 +7,14 @@ Prior working knowledge is assumed for:
 * Using Git repositories
 * Creating build and release pipelines in Azure DevOps.
 
+<b>Table of Contents</b>
+  * [Prerequisites](#prerequisites)
+  * [Repository Items](#repository-items)
+  * [Deployment](#deployment)
+  * [Limitations](#limitations)
+  * [References](#references)
+  * [License](#license)
+
 ## Prerequisites
 * A running instance of <a href="https://azure.microsoft.com/en-us/services/analysis-services/">Azure Analysis Services</a>.
 * An Analysis Services Tabular model project in <a href="https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-ver15">SQL Server Data Tools (SSDT)</a>.
@@ -73,8 +81,8 @@ Your final pipeline should resemble the images below:
 ![Release pipline agent tasks](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipelineStage.jpg)
 
 ## Limitations
-* This is a basic example that does not include other DevOps best practices for unit testing or quality control checks.
-* The build pipeline copies all project files when only the Bim files is required. This was intentional to make the settings for the Copy Files task generic to make it more reusable.
+* This is a basic example that does not include other DevOps best practices for (i.e. Unit testing, Quality control checks).
+* The build pipeline copies all project files when only the Bim files is required. This was intentional for making the settings of the Copy Files task generic to increase reusability.
 
 ## References
 * <a href="https://github.com/otykier/TabularEditor">Tabular Editor</a>
