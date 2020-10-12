@@ -30,6 +30,7 @@ Create a new build pipeline. Use the tasks from the steps section of the BuildPi
 <b>Step 3: Create release pipeline</b>
 Create a new release pipeline, adding the artifact from the build pipeline created in Step 2. Add a Stage to the pipeline and follow the steps below to add tasks.
 <br/>
+<br/>
 <b>1)</b> PowerShell task with the following inline command to download and install Tabular Editor on the release agent.
 ```
 # Download URL for Tabular Editor portable:
@@ -62,7 +63,7 @@ start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArti
 <br/>
 <br/>
 Your final pipeline stage should resemble the image below:
-
+<br/>
 ![Release pipline](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipeline.jpg)
 
 ![Release pipline agent tasks](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipelineStage.jpg)
