@@ -24,7 +24,7 @@ Prior working knowledge is assumed for:
   * Use <b>Manual Entry</b> with the following format, ```app:<ApplicationID>@<TenantID>```
   
 ## Repository Items
-* <b>ReleasePipelineDataSourceUpdate.cs</b>: Script that is used during deployment to replace the server propetry value based on an release pipeline variable with the same name as the Data Source in the Tabular Model.
+* <b>ReleasePipelineDataSourceUpdate.cs</b>: Script that is used during deployment to replace the server property value based on an release pipeline variable with the same name as the Data Source in the Tabular Model.
 * <b>BuldPipeline.yml</b>: Yaml file for build pipeline that ensure the .bim file and the deployment scripts are available as artifacts for the relase pipeline.
 
 ## Deployment
