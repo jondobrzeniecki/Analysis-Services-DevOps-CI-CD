@@ -59,7 +59,7 @@ Remove-Item $DownloadDestination
 ```
 <b>2)</b> Add a pipeline variable named ASConnectionString for the connection string to connect to the Azure Analysis Services server.  Using the following format for the connection string and lock the variable to hide the value since a set of SPN credentials are contained in it.
 
-`Provider=MSOLAP;Data Source=<aas-server>;User ID=<app:cliend-id@tenant-id>;Password=<secret>`
+`Provider=MSOLAP;Data Source=<aas-server>;User ID=app:<ApplicationID>@<TenantID>;Password=<Secret>`
  
 <b>3)</b> Add a variable named ASModelName for the name of your tabular model.
 
