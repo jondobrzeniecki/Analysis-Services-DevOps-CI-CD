@@ -4,7 +4,7 @@ This repository is an up-to-date summarized example of creating a build and rele
 
 Prior working knowledge is assumed for:
 * SQL Server Data Tools (SSDT) projects for Analysis Services Tabular models
-* Using Git repositories
+* Azure DevOps projects and using Git repositories
 * Creating build and release pipelines in Azure DevOps.
 
 <b>Table of Contents</b>
