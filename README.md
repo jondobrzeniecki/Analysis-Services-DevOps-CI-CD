@@ -61,9 +61,10 @@ start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArti
 ```
 <br/>
 <br/>
-<br/>
 Your final pipeline stage should resemble the image below:
 <br/>
+<br/>
+
 ![Release pipline](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipeline.jpg)
 
 ![Release pipline agent tasks](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipelineStage.jpg)
