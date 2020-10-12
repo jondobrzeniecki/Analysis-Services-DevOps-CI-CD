@@ -61,7 +61,7 @@ start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArti
 ```
 <br/>
 <br/>
-Your final pipeline stage should resemble the image below:
+Your final pipeline should resemble the images below:
 <br/>
 <br/>
 
