@@ -23,7 +23,7 @@ Prior working knowledge is assumed for:
 
 <b>Step 1: Commit and Push to Source Control</b>
 <br/>
-Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the <b>ReleasePipelineDataSourceUpdate.cs</b> is also present in the repository.
+Commit and Push the Tabular model project to the Git repository of your Azure DevOps project. Ensure that the ReleasePipelineDataSourceUpdate.cs script is also present in the repository.
 
 <b>Step 2: Create build artifact containing Bim file</b>
 <br/>
