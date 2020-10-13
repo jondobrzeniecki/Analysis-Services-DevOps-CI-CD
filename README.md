@@ -67,7 +67,7 @@ Remove-Item $DownloadDestination
 
 <b>5)</b> Add a command line task to the release agent after the PowerShell task. Use the script below to execute a deployment with Tabular Editor.
 
-<i>Note: Please reference the <a href="https://github.com/otykier/TabularEditor/wiki/Command-line-Options">Tabular Editor Command line Options</a> for a better understanding of the options present in the sample command.</i>
+<i><font color="red">Note: Please reference the <a href="https://github.com/otykier/TabularEditor/wiki/Command-line-Options">Tabular Editor Command line Options</a> for a better understanding of the options present in the sample command.</font></i>
 
 ```
 start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\<your-project-name>\<your-bim-file>.bim" -D "$(ASConnectionString)" "$(ASModelName)" -S "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\ReleasePipelineDataSourceUpdate.cs" -C -O -P -V -E -W
