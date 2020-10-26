@@ -91,8 +91,6 @@ foreach(var role in Model.Roles)
     }
 }
 ```
-
-<br/>
 <br/>
 Your final pipeline should resemble the images below:
 <br/>
