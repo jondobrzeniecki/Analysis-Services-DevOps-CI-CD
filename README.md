@@ -11,6 +11,7 @@ Prior working knowledge is assumed for:
   * [Prerequisites](#prerequisites)
   * [Repository Items](#repository-items)
   * [Deployment](#deployment)
+  * [Handling Senstive/Secret Values](#Handling Senstive/Secret Values)
   * [Limitations](#limitations)
   * [References](#references)
   * [License](#license)
@@ -72,8 +73,6 @@ Remove-Item $DownloadDestination
 ```
 start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\<your-project-name>\<your-bim-file>.bim" -D "$(ASConnectionString)" "$(ASModelName)" -S "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\ReleasePipelineDataSourceUpdate.cs" -C -O -P -V -E -W
 ```
-
-
 <br/>
 <br/>
 Your final pipeline should resemble the images below:
@@ -83,6 +82,11 @@ Your final pipeline should resemble the images below:
 ![Release pipline](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipeline.jpg)
 
 ![Release pipline agent tasks](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/ReleasePipelineStage.jpg)
+
+## Handling Senstive/Secret Values
+If you're updating the credentials used in a datasource (i.e. username, password) then follow the additional step below to make the secret values available to the <b>ReleasePipelineDataSourceUpdate.cs</b> script that will be excuted by the Tabular Editor command line task (Deployment - Step 5).
+
+The command line task in the release pipeline has a section for <b>Environment Variables</b>. Use this section if you're hanlding secret values coming from either pipeline tasks or Azure Key Vault. In the screenshot below you can see an example of a local variable named <b>Password</b> being mapped to a pipeline variable that securely stores the password.
 
 ## Limitations
 * This is a basic example that does not include other DevOps best practices (i.e. Unit testing, Quality control checks).
