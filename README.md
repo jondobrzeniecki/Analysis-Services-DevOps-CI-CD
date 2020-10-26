@@ -73,6 +73,25 @@ Remove-Item $DownloadDestination
 ```
 start /B /wait TabularEditor.exe "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\<your-project-name>\<your-bim-file>.bim" -D "$(ASConnectionString)" "$(ASModelName)" -S "$(System.DefaultWorkingDirectory)\_BimFileArtifact\theBimFile\s\ReleasePipelineDataSourceUpdate.cs" -C -O -P -V -E -W
 ```
+
+If roles and members are mainted in the tabular model project and are deployed with the release pipeline, then the following script needs to be added to <b>ReleasePipelineDataSourceUpdate.cs</b> to remove an unsupported metadata tag related to role members.
+
+```
+foreach(var role in Model.Roles)
+{
+    // Find all Azure AD role members where MemberID is assigned:
+    var orgMembers = role.Members.OfType<ExternalModelRoleMember>()
+        .Where(m => m.IdentityProvider == "AzureAD" && !string.IsNullOrEmpty(m.MemberID)).ToList();
+        
+    // Delete the member and recreate it without assigning MemberID:
+    foreach(var orgMember in orgMembers)
+    {
+        orgMember.Delete();
+        role.AddExternalMember(orgMember.MemberName);
+    }
+}
+```
+
 <br/>
 <br/>
 Your final pipeline should resemble the images below:
