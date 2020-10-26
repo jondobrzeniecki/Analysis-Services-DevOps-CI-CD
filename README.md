@@ -87,6 +87,8 @@ Your final pipeline should resemble the images below:
 If you're updating the credentials used in a datasource (i.e. username, password) then follow the additional step below to make the secret values available to the <b>ReleasePipelineDataSourceUpdate.cs</b> script that will be excuted by the Tabular Editor command line task (Deployment - Step 5).
 
 The command line task in the release pipeline has a section for <b>Environment Variables</b>. Use this section if you're hanlding secret values coming from either pipeline tasks or Azure Key Vault. In the screenshot below you can see an example of a local variable named <b>Password</b> being mapped to a pipeline variable that securely stores the password.
+<br/>
+![Environment Variables settings](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/SecretValuesCmdTask.png)
 
 ## Limitations
 * This is a basic example that does not include other DevOps best practices (i.e. Unit testing, Quality control checks).
