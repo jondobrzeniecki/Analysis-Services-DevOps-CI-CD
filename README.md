@@ -88,6 +88,7 @@ If you're updating the credentials used in a datasource (i.e. username, password
 
 The command line task in the release pipeline has a section for <b>Environment Variables</b>. Use this section if you're hanlding secret values coming from either pipeline tasks or Azure Key Vault. In the screenshot below you can see an example of a local variable named <b>Password</b> being mapped to a pipeline variable that securely stores the password.
 <br/>
+<br/>
 ![Environment Variables settings](https://raw.githubusercontent.com/jondobrzeniecki/Analysis-Services-DevOps-CI-CD/main/img/SecretValuesCmdTask.png)
 
 ## Limitations
